@@ -1,0 +1,10 @@
+﻿insert into country (id, name, capital, population) values (1, 'Pandora', 'El Zulia', 200);
+insert into country (id, name, capital, population) values (2, 'Ad', 'Fonseca', 120);
+insert into country (id, name, capital, population) values (3, 'Gretel', 'Janakpur', 300);
+insert into country (id, name, capital, population) values (4, 'Harman', 'Burauen', 4000);
+insert into country (id, name, capital, population) values (5, 'Dedie', 'Makungu', 900);
+insert into country (id, name, capital, population) values (6, 'Nicky', 'Breda', 500);
+insert into country (id, name, capital, population) values (7, 'Nico', 'Huangqiao', 450);
+insert into country (id, name, capital, population) values (8, 'Rickie', 'Hexia', 8000);
+insert into country (id, name, capital, population) values (9, 'Walt', 'Bocaiúva', 2001);
+insert into country (id, name, capital, population) values (10, 'Lavinia', 'Gambang', 5600);

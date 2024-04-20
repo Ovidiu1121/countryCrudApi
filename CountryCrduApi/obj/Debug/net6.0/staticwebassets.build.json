@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8vKXUElaAxtsTGJDiw0A+sSVjG0lydFcqWrh+6nVgHo=",
+  "Source": "CountryCrduApi",
+  "BasePath": "_content/CountryCrduApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
