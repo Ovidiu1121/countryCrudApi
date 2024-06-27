@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=64c6ba26_002Dd6f6_002D479e_002Da407_002Ddb8dae1a432a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from UnitTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;ProjectFolder&gt;8E761584-7BF8-4B91-AC9B-CD2911F32214/d:UnitTests&lt;/ProjectFolder&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::8E761584-7BF8-4B91-AC9B-CD2911F32214::net6.0::tests.IntegrationTests.CountryIntegrationTests.Post_Create_ValidRequest_ReturnsCreatedStatusCode_ValidProductContentResponse&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::8E761584-7BF8-4B91-AC9B-CD2911F32214::net6.0::tests.IntegrationTests.CountryIntegrationTests.Post_Create_DoctorAlreadyExists_ReturnsBadRequestStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::8E761584-7BF8-4B91-AC9B-CD2911F32214::net6.0::tests.IntegrationTests.CountryIntegrationTests.Post_Create_CountryAlreadyExists_ReturnsBadRequestStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::8E761584-7BF8-4B91-AC9B-CD2911F32214::net6.0::tests.IntegrationTests.CountryIntegrationTests.Put_Update_ValidRequest_ReturnsAcceptedStatusCode_ValidProductContentResponse&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::8E761584-7BF8-4B91-AC9B-CD2911F32214::net6.0::tests.IntegrationTests.CountryIntegrationTests&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

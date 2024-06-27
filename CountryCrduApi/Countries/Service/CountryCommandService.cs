@@ -16,9 +16,9 @@ namespace CountryCrduApi.Countries.Service
             _repository = repository;
         }
 
-        public async Task<Country> CreateCountry(CreateCountryRequest request)
+        public async Task<CountryDto> CreateCountry(CreateCountryRequest request)
         {
-            Country country = await _repository.GetByNameAsync(request.Name);
+            CountryDto country = await _repository.GetByNameAsync(request.Name);
 
             if (country!=null)
             {
@@ -29,9 +29,9 @@ namespace CountryCrduApi.Countries.Service
             return country;
         }
 
-        public async Task<Country> DeleteCountry(int id)
+        public async Task<CountryDto> DeleteCountry(int id)
         {
-            Country country = await _repository.GetByIdAsync(id);
+            CountryDto country = await _repository.GetByIdAsync(id);
 
             if (country==null)
             {
@@ -42,9 +42,9 @@ namespace CountryCrduApi.Countries.Service
             return country;
         }
 
-        public async Task<Country> UpdateCountry(int id,UpdateCountryRequest request)
+        public async Task<CountryDto> UpdateCountry(int id,UpdateCountryRequest request)
         {
-            Country country = await _repository.GetByIdAsync(id);
+            CountryDto country = await _repository.GetByIdAsync(id);
 
             if (country==null)
             {

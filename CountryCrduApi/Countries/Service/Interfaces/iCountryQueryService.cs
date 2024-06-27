@@ -1,11 +1,13 @@
 ﻿using CountryCrduApi.Countries.Model;
+using CountryCrduApi.Dto;
 
 namespace CountryCrduApi.Countries.Service.Interfaces
 {
     public interface iCountryQueryService
     {
-        Task<IEnumerable<Country>> GetAllCountries();
-        Task<Country> GetByName(string name);
-        Task<Country> GetByPopulation(int population);
+        Task<ListCountryDto> GetAllCountries();
+        Task<CountryDto> GetByName(string name);
+        Task<CountryDto> GetById(int id);
+        Task<CountryDto> GetByPopulation(int population);
     }
 }

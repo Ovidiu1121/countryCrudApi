@@ -12,6 +12,7 @@ namespace CountryCrduApi.Mappings
 
             CreateMap<CreateCountryRequest, Country>();
             CreateMap<UpdateCountryRequest, Country>();
+            CreateMap<CountryDto, Country>().ReverseMap();
 
         }
 

@@ -18,7 +18,7 @@ namespace CountryCrduApi.Countries.Repository.interfaces
             _mapper = mapper;
         }
 
-        public async Task<Country> CreateCountry(CreateCountryRequest request)
+        public async Task<CountryDto> CreateCountry(CreateCountryRequest request)
         {
             var country = _mapper.Map<Country>(request);
 
@@ -26,10 +26,10 @@ namespace CountryCrduApi.Countries.Repository.interfaces
 
             await _context.SaveChangesAsync();
 
-            return country;
+            return _mapper.Map<CountryDto>(country);
         }
 
-        public async Task<Country> DeleteCountryById(int id)
+        public async Task<CountryDto> DeleteCountryById(int id)
         {
             var country = await _context.Countries.FindAsync(id);
 
@@ -37,31 +37,44 @@ namespace CountryCrduApi.Countries.Repository.interfaces
 
             await _context.SaveChangesAsync();
 
-            return country;
+            return _mapper.Map<CountryDto>(country);
         }
 
-        public async Task<IEnumerable<Country>> GetAllAsync()
+        public async Task<ListCountryDto> GetAllAsync()
         {
-            return await _context.Countries.ToListAsync();
+            List<Country> result = await _context.Countries.ToListAsync();
+            
+            ListCountryDto listCountryDto = new ListCountryDto()
+            {
+                countryList = _mapper.Map<List<CountryDto>>(result)
+            };
+
+            return listCountryDto;
         }
 
-        public async Task<Country> GetByIdAsync(int id)
+        public async Task<CountryDto> GetByIdAsync(int id)
         {
-            return await _context.Countries.FirstOrDefaultAsync(obj => obj.Id.Equals(id));
+            var country = await _context.Countries.Where(c => c.Id == id).FirstOrDefaultAsync();
+            
+            return _mapper.Map<CountryDto>(country);
         }
 
-        public async Task<Country> GetByNameAsync(string name)
+        public async Task<CountryDto> GetByNameAsync(string name)
         {
-            return await _context.Countries.FirstOrDefaultAsync(obj => obj.Name.Equals(name));
+            var country = await _context.Countries.Where(c => c.Name.Equals(name)).FirstOrDefaultAsync();
+            
+            return _mapper.Map<CountryDto>(country);
         }
 
-        public async Task<Country> GetByPopulationAsync(int population)
+        public async Task<CountryDto> GetByPopulationAsync(int population)
         {
-            return await _context.Countries.FirstOrDefaultAsync(obj => obj.Population.Equals(population));
+            var country = await _context.Countries.Where(c => c.Population==population).FirstOrDefaultAsync();
+            
+            return _mapper.Map<CountryDto>(country);
 
         }
 
-        public async Task<Country> UpdateCountry(int id,UpdateCountryRequest request)
+        public async Task<CountryDto> UpdateCountry(int id,UpdateCountryRequest request)
         {
             var country = await _context.Countries.FindAsync(id);
 
@@ -73,7 +86,7 @@ namespace CountryCrduApi.Countries.Repository.interfaces
 
             await _context.SaveChangesAsync();
 
-            return country;
+            return _mapper.Map<CountryDto>(country);
         }
     }
 }

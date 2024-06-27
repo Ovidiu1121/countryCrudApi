@@ -11,27 +11,39 @@ namespace CountryCrduApi.Countries.Controller.Interfaces
         [HttpGet("all")]
         [ProducesResponseType(statusCode: 200, type: typeof(IEnumerable<Country>))]
         [ProducesResponseType(statusCode: 404, type: typeof(String))]
-        public abstract Task<ActionResult<IEnumerable<Country>>> GetAll();
+        public abstract Task<ActionResult<ListCountryDto>> GetAll();
 
         [HttpPost("create")]
         [ProducesResponseType(statusCode: 201, type: typeof(Country))]
         [ProducesResponseType(statusCode: 400, type: typeof(String))]
-        public abstract Task<ActionResult<Country>> CreateCountry([FromBody] CreateCountryRequest request);
+        public abstract Task<ActionResult<CountryDto>> CreateCountry([FromBody] CreateCountryRequest request);
 
         [HttpPut("update/{id}")]
         [ProducesResponseType(statusCode: 202, type: typeof(Country))]
         [ProducesResponseType(statusCode: 400, type: typeof(String))]
         [ProducesResponseType(statusCode: 404, type: typeof(String))]
-        public abstract Task<ActionResult<Country>> UpdateCountry([FromRoute]int id, [FromBody] UpdateCountryRequest request);
+        public abstract Task<ActionResult<CountryDto>> UpdateCountry([FromRoute]int id, [FromBody] UpdateCountryRequest request);
 
         [HttpDelete("delete/{id}")]
         [ProducesResponseType(statusCode: 202, type: typeof(Country))]
         [ProducesResponseType(statusCode: 404, type: typeof(String))]
-        public abstract Task<ActionResult<Country>> DeleteCountry([FromRoute] int id);
+        public abstract Task<ActionResult<CountryDto>> DeleteCountry([FromRoute] int id);
 
-        [HttpGet("{name}")]
+        [HttpGet("id/{id}")]
         [ProducesResponseType(statusCode: 202, type: typeof(Country))]
         [ProducesResponseType(statusCode: 404, type: typeof(String))]
-        public abstract Task<ActionResult<Country>> GetByNameRoute([FromRoute] string name);
+        public abstract Task<ActionResult<CountryDto>> GetByIdRoute([FromRoute] int id);
+        
+        [HttpGet("name/{name}")]
+        [ProducesResponseType(statusCode: 202, type: typeof(Country))]
+        [ProducesResponseType(statusCode: 404, type: typeof(String))]
+        public abstract Task<ActionResult<CountryDto>> GetByNameRoute([FromRoute] string name);
+        
+        [HttpGet("population/{population}")]
+        [ProducesResponseType(statusCode: 202, type: typeof(Country))]
+        [ProducesResponseType(statusCode: 404, type: typeof(String))]
+        public abstract Task<ActionResult<CountryDto>> GetByPopulationRoute([FromRoute] int population);
+        
+        
     }
 }

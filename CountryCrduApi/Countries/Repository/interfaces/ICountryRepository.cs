@@ -5,12 +5,12 @@ namespace CountryCrduApi.Countries.Repository.interfaces
 {
     public interface ICountryRepository
     {
-        Task<IEnumerable<Country>> GetAllAsync();
-        Task<Country> GetByNameAsync(string name);
-        Task<Country> GetByIdAsync(int id);
-        Task<Country> GetByPopulationAsync(int population);
-        Task<Country> CreateCountry(CreateCountryRequest request);
-        Task<Country> UpdateCountry(int id,UpdateCountryRequest request);
-        Task<Country> DeleteCountryById(int id);
+        Task<ListCountryDto> GetAllAsync();
+        Task<CountryDto> GetByNameAsync(string name);
+        Task<CountryDto> GetByIdAsync(int id);
+        Task<CountryDto> GetByPopulationAsync(int population);
+        Task<CountryDto> CreateCountry(CreateCountryRequest request);
+        Task<CountryDto> UpdateCountry(int id,UpdateCountryRequest request);
+        Task<CountryDto> DeleteCountryById(int id);
     }
 }
